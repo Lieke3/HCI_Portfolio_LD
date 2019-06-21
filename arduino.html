@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Arduino Workshop | HCI Portfolio</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel ="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/resume.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Arduino Workshop</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/DSC_0040.jpg" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#opdracht3">Opdracht 3c</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#opdracht4">Opdracht 4c</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#opdracht6">Opdracht 6c</a>
+        </li>
+       <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#opdracht7">Opdracht 7</a>
+        </li>
+       <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#opdracht8">Opdracht 8</a>
+        </li>
+       <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#opdracht9">Opdracht 9b</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#opdracht10">Opdracht 10f</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#opdracht11">Opdracht 11b</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#opdracht12">Opdracht 12b</a>
+        </li> 
+       <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#opdracht13">Opdracht 13b</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0">
+
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" >
+      <div class="w-100">
+        <h2 class="mb-5">Arduino opdrachten</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5" id="opdracht3">
+          <div class="resume-content">
+            <h3 class="mb-0">Opdracht 3c</h3>
+            <div class="subheading mb-3"> Toelichting</div>
+            <p> Tijdens deze opdracht laat ik het groene lampje twee keer zo snel knipperen als het gele lampje. Ik doe dat door middel van de code in de afbeelding. Het groene lampje is verbonden met pin 13 en het gele lampje met pin 12. Dit staat in de code binnen void setup(){}. De lampjes werder eerder met LED_BUILTIN aangeroepen, maar deze heb ik veranderd naar de pin waarin de snoertjes in arduino met de lampjes zijn verbonden. Zo blijft de code overzichtelijker. In void loop(){} staat de code die ervoor zorgt dat het groene lampje twee keer zo snel knippert dan het gele lampje. Door 13 twee keer meer aan te roepen dan 12, knippert deze ook twee keer meer dan 12.  Met de delay bepaal ik de snelheid van het knipperen.</p>
+            <p class="code">void setup() { </br>
+              pinMode(12,  OUTPUT); </br>
+              pinMode(13,  OUTPUT);</br>
+
+            }</br></br>
+
+            void loop() {</br>
+             digitalWrite(13, HIGH);   </br>
+              delay(500); </br>
+              digitalWrite(13, LOW);  </br>  
+              delay(500);  </br>
+              digitalWrite(13, HIGH); </br>  
+              delay(500); </br>
+              digitalWrite(13, LOW);  </br>       
+              delay(500); </br>
+                                  
+              digitalWrite(12, HIGH);  </br>
+              delay(500);              </br>                         
+              digitalWrite(12, LOW);    </br>
+              delay(500);              </br>       
+            } 
+            </p>
+            <div class="subheading mb-3"> Foto & video</div>
+
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/cZDJB0s3G8E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+          </div>
+        </div>
+    <hr class="m-0">
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5" id="opdracht4">
+          <div class="resume-content">
+            <h3 class="mb-0">Opdracht 4c</h3>
+            <div class="subheading mb-3">Assignments</div>
+            <p> Met onderstaande code zorg ik ervoor dat wanneer het ene lampje langzaam uitgaat, het andere lampje langzaam aangaat. Ik heb besloten om het gele lampje aan te laten gaan en het groene lampje te dimmen. De maximaal mogelijke helderheid is 256, dus wanneer de helderheid lager dan 255 is, kan het gele lampje aan. Anders gaat die uit.  Bij het groene lampje is het andersom, hier moet de helderheid langzaam minder worden en dat doe ik met de code 255 – brightness. Met delay zet ik een bepaalde tijd aan de handeling.  </p>
+
+
+            <p class="code">int greenLedPin = 10; </br>
+                          int yellowLedPin = 9; </br></br>
+                          void setup() { </br>
+                            pinMode(greenLedPin, OUTPUT); </br>
+                            pinMode(yellowLedPin, OUTPUT); </br>
+                          } </br> </br>
+
+                          void loop() { </br>
+                              for (int brightness=0; brightness < 256; brightness++){ </br>
+                               analogWrite(yellowLedPin, brightness); </br>
+                               analogWrite(greenLedPin, 255 - brightness); </br>
+                               
+                               delay(7);</br>
+                              }</br>
+
+                  </p>
+            <div class="subheading mb-3">Foto & video</div>
+             <iframe width="560" height="315" src="https://www.youtube.com/embed/HJYAB2zHAsg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+    <hr class="m-0">
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5" id="opdracht6">
+          <div class="resume-content">
+            <h3 class="mb-0">Opdracht 6c</h3>
+
+            <div class="subheading mb-3">Assignments</div>
+            <p>  Bij deze opdracht is het principe hetzelfde als bij opdracht 4c : ik laat het ene lampje uitgaan, wanneer het andere lampje aangaat. Het verschil is dat ik dit nu niet alleen met code doe, maar het zelf kan beïnvloeden met een potmeter. Een potmeter is een soort draaiknop die aan bepaalde waarden gekoppeld kan worden en daarmee kan de gebruiker invloed uitoefenen op het circuit. Bij deze opdracht is het dus zo wanneer ik aan de potmeter draai, het ene lampje uitgaat terwijl het andere lampje aangaat. In de code koppel ik eerst de variabelen greenLedPin en yellowLedPin aan de arduino port waar ze aan zitten gekoppeld: het snoertje tussen het groene lampje zit verbonden aan het arduinoboard via port 10. Ik heb via de Serial Monitor gemeten dat de hoogste waarde van de potmeter 1023 is, van de lampjes is dat 256. Hierdoor is de formule voor de sensorValue bekend: (sensorValue/1023)*255. Met analogWrite wordt het analoge board van Arduino bedoeld en zo kan worden opgeschreven dat de ene lamp uit moet, wanneer de andere lamp aangaat. 
+            Met de map functie is het mogelijk om de code korter te schrijven. 
+             </p>
+
+             <p class="code">
+
+              float sensorValue =  0;  </br>
+              int sensorPin = A0;  </br>
+              int greenLedPin = 10;</br>
+              int yellowLedPin = 9;</br></br>
+
+              void setup(){</br>
+               pinMode(sensorPin, INPUT);</br>
+               Serial.begin(9600);</br>
+                pinMode(greenLedPin, OUTPUT);</br>
+                pinMode(yellowLedPin, OUTPUT);</br>
+              }</br></br>
+              void loop() {</br>
+               sensorValue = analogRead(sensorPin);  </br>
+               sensorValue = (sensorValue/1023)*255; </br>
+               Serial.println(sensorValue); </br>
+               analogWrite(greenLedPin, sensorValue);</br>
+               analogWrite(yellowLedPin, sensorValue); </br></br>
+
+              int val = analogRead(0);</br>
+                val = map(val, 1023, 0, 255, 0);</br>
+                analogWrite(9,val);</br>
+                analogWrite(10,-val +255);</br></br>
+
+                 
+               delay(20);  </br>
+              }
+                </p>
+
+            <div class="subheading mb-3">Foto & video</div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/cMDSpUmUHK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>       
+    <hr class="m-0">
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5" id="opdracht7">
+          <div class="resume-content">
+            <h3 class="mb-0">Opdracht 7</h3>
+            <div class="subheading mb-3">Assignments</div>
+            <p>  We blijven nog even lampjes aan- en uitzetten. In deze opdracht met behulp van een lichtsensor. Als deze lichtsensor wordt afgedekt, gaan de lampjes ook uit omdat de sensor geen licht detecteert. Met de 50 in de sensorValue formule heb ik de maximale helderheid aangepast.  </p>
+
+            <p class="code">
+
+              float sensorValue =  0;  </br>
+              int sensorPin = A0;  </br>
+              int greenLedPin = 10; </br>
+              int yellowLedPin = 9; </br> </br>
+
+              void setup() { </br>
+               pinMode(sensorPin, INPUT); </br>
+               Serial.begin(9600); </br>
+                pinMode(greenLedPin, OUTPUT); </br>
+                pinMode(yellowLedPin, OUTPUT); </br>
+              } </br> </br>
+              void loop() { </br>
+               sensorValue = analogRead(sensorPin); sensorValue = (sensorValue/50)*255; </br>
+               Serial.println(sensorValue);  </br>
+               analogWrite(greenLedPin, sensorValue); </br>
+               analogWrite(yellowLedPin, sensorValue);  </br>
+
+                 
+               delay(20);  </br>
+              } </br>
+
+              </p>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/_K-sfIiqVU0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+    <hr class="m-0">
+
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5" id="opdracht8">
+          <div class="resume-content">
+            <h3 class="mb-0">Opdracht 8</h3>
+            <div class="subheading mb-3">Assignments</div>
+            <p>  Met een voltage divider is het mogelijk om een groot voltage in een kleiner voltage te veranderen. Met twee lichtsensoren kan dit en hiervoor is ook onderstaande formule voor nodig. Door dit met lichtsensoren te doen zal het voltage in een ruimte met veel licht lager zijn, dan in een ruimte met weinig licht. De lichtsensoren meten de hoeveelheid licht, met lichtsensoren in het circuit zijn deze de baas over de hoeveelheid licht in de ledlampjes. Als de lichtsensoren veel licht opnemen, zullen de lampjes ook feller zijn dan ze in een donkere ruimte zullen zijn. Ik zal proberen om dit met behulp van de formule te beredeneren. De output van de voltage (de hoeveelheid licht in de lampjes) wordt bepaald door de lichtsensoren R1 en R2. De input van de voltage is de stroom die arduino via de usb modem binnenkrijgt, dus bijvoorbeeld van de computer of powerbank die aangesloten is. </br>Wanneer de linkersensor wordt afgedekt verhoogt de waarde in Arduino, maar wanneer vervolgens de rechtersensor wordt afgedekt verlaagt de waarde.   </p>
+
+            <p class="code">
+              int sensorValue = 0; </br>
+              int sensorPin = A0; </br></br>
+              void setup() {</br>
+               pinMode(sensorPin, INPUT);</br>
+               Serial.begin(9600);</br>
+              }</br></br>
+              void loop() {</br>
+               sensorValue = analogRead(sensorPin); </br>
+               Serial.println(sensorValue); </br>
+              delay(200); </br>
+              }</br>
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/w6Hbb1_ZeMU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+    <hr class="m-0">
+
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5" id="opdracht9">
+          <div class="resume-content">
+            <h3 class="mb-0">Opdracht 9b</h3>
+            <div class="subheading mb-3">Assignments</div>
+            <p> Nu combineren we Arduino met Processing. Met Processing kunnen vormen op het scherm getoond worden en in combinatie met Arduino en sensoren komt er bij deze opdracht een lijn in Processing wanneer de touchsensor in het breadboard wordt aangeraakt,   </p>
+           <h4>De code in Processing</h4> <p class="code">
+              import processing.serial.*; </br>
+                Serial myPort;</br>
+                String sensorReading="";</br></br>
+                void setup() {</br>
+                 size(400, 400);</br>
+                 myPort = new Serial(this, Serial.list()[1], 9600); </br>
+                 myPort.bufferUntil('\n');</br>
+                }</br></br>
+                void draw() {</br>
+                 background(255);</br>
+                 fill(0);</br>
+                 text("Sensor Reading: " + sensorReading, 20, 20);</br>
+                 line(width/2, height/2, float(sensorReading), float(sensorReading));</br>
+                }</br></br>
+                void serialEvent (Serial myPort) {</br>
+                 sensorReading = myPort.readStringUntil('\n');</br>
+                }</br></br></p>
+
+            <h4>De code in Arduino</h4>
+            <p class="code">
+              float sensorValue = 0; // variable for sensor value</br>
+              int sensorPin = A0; // variable for sensor pin</br>
+              int greenLedPin = 10; // variable for green LED pin</br></br>
+              void setup() {</br>
+               Serial.begin(9600); // Start the Serial connection at speed of 9600 bps </br>
+               pinMode(sensorPin, INPUT); // Input pin for potmeter or LDR</br>
+               pinMode(greenLedPin, OUTPUT); // Output pin for LED</br>
+              }</br></br>
+              void loop() {</br>
+               sensorValue = analogRead(sensorPin); // Read the value/current on the sensor pin and store that value in the variable sensorValue</br>
+               sensorValue = (sensorValue/1023)*255; // Rescale the sensor's value. Change to calibrate the sensor.</br>
+               analogWrite(greenLedPin, sensorValue);// Send power to LED</br>
+               Serial.println(sensorValue); // Print the sensorValue to the serial connection</br>
+               delay(100); // Wait 0.1 seconds</br>
+              }</br></br></p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GY8kBSNTUYs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+    <hr class="m-0">
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5" id="opdracht10">
+          <div class="resume-content">
+            <h3 class="mb-0">Opdracht 10f</h3>
+            <div class="subheading mb-3">Assignments</div>
+            <p> Met buttons kan er makkelijk interactie gecreeerd worden. Bij deze opdracht laat ik zien hoe je met twee buttons kunt werken. In onderstaande code staat hoe een lampje aangaat wanneer 1 button wordt ingedrukt, maar uitblijft wanneer allebei de buttons worden ingedrukt. </p>
+
+            <p class="code">
+              // constants won't change. They're used here to set pin numbers:</br>
+              const int buttonPinL = 2;     // the number of the pushbutton pin</br>
+              const int buttonPinR = 3;     // the number of the pushbutton pin</br></br>
+
+              const int ledPin =  13;      // the number of the LED pin variables will change:</br>
+              //int buttonState = 0;         // variable for reading the pushbutton status</br></br>
+
+              void setup() {</br>
+                 Serial.begin(9600);</br>
+
+                // initialize the LED pin as an output:</br>
+                pinMode(ledPin, OUTPUT);</br>
+                // initialize the pushbutton pin as an input:</br>
+                pinMode(buttonPinL, INPUT);</br>
+                pinMode(buttonPinR, INPUT);</br>
+              }</br></br></br>
+              void loop() {</br>
+                // read the state of the pushbutton value:</br>
+                //buttonState = digitalRead(buttonPin);</br>
+              Serial.println(digitalRead(buttonPinL));</br>
+              Serial.println(digitalRead(buttonPinR));</br></br>
+
+                // check if the pushbutton is pressed. If it is, the buttonState is HIGH:</br>
+                if (digitalRead(buttonPinL) == 1 && digitalRead(buttonPinR) == 1) {</br>
+                  // turn LED on:</br>
+                  digitalWrite(ledPin, LOW);</br>
+                } </br>
+                else if(digitalRead(buttonPinL) == 1 || digitalRead(buttonPinR) == 1){</br>
+                  digitalWrite (ledPin, HIGH);</br>
+                }</br>
+                else {</br>
+                  // turn LED off:</br>
+                  digitalWrite(ledPin, LOW);</br>
+                }</br>
+              }</br>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZmrOSQrDcdc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+    <hr class="m-0">
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5" id="opdracht11">
+          <div class="resume-content">
+            <h3 class="mb-0">Opdracht 11b</h3>
+            <div class="subheading mb-3">Assignments</div>
+            <p>  Servomotors gaan altijd richting een bepaalde positie, waardoor ze goed te gebruiken zijn voor op afstand bestuurbare apparaten. In onderstaande code staat hoe mijn servomotor zich kan bewegen.  </p>
+            <p class="code">
+              #include <Servo.h></br>
+              Servo myServo; // Declare a servo object for us to control</br>
+              int servoPin = 9; // Var for the pin the servo connects to</br>
+              int pos = 0; // Var to keep track of the servo's position</br>
+              float sensorValue =  0; // variable for sensor value</br></br>
+
+              int buttonPinL = 3; // Var for the pin of the left button</br>
+              int buttonPinR = 2; // Var for the pin of the right button</br></br>
+
+              void setup() {</br>
+               myServo.attach(servoPin); // Tell the servo to what pin it's connected to</br>
+               pinMode(buttonPinL, INPUT); // Set the left button pin to input</br>
+               pinMode(buttonPinR, INPUT); // Set the right button pin to input</br>
+               Serial.begin(9600);</br>
+              }</br></br>
+              void loop() {</br>
+              Serial.println(digitalRead(buttonPinL));</br>
+              Serial.println(digitalRead(buttonPinR));</br></br>
+
+
+
+              if(digitalRead(buttonPinL) == 1) {</br>
+                myServo.write(200);</br>
+                delay(200);</br>
+              }</br></br>
+
+              if(digitalRead(buttonPinR) == 1) {</br>
+                myServo.write(0);</br>
+                delay(200);</br>
+              }</br></br>
+              
+              }
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/bMvtb729b1A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+    <hr class="m-0">
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5" id="opdracht12">
+          <div class="resume-content">
+            <h3 class="mb-0">Opdracht 12b</h3>
+            <div class="subheading mb-3">Assignments</div>
+            <p>  Nu de servomotor kan bewegen kunnen we hier ook een sensor op toepassen. Voor deze opdracht voeg ik een touchsensor toe. De onderstaande code laat zien dat de servomotor bij aanraking van de ene touchsensor met de klok mee draait en wanneer de andere touchsensor wordt aangeraakt draait de servomotor tegen de klok in.  </p>
+
+            <p class="code">
+              #include <Servo.h></br>
+              Servo myServo; // Declare a servo object for us to control</br>
+              int servoPin = 9; // Var for the pin the servo connects to</br>
+              int pos = 0; // Var to keep track of the servo's position</br>
+              float sensorValue =  0; // variable for sensor value</br></br>
+
+              int buttonPinL = 3; // Var for the pin of the left button</br>
+              int buttonPinR = 2; // Var for the pin of the right button</br></br>
+
+              void setup() {</br>
+               myServo.attach(servoPin); // Tell the servo to what pin it's connected to</br>
+               pinMode(buttonPinL, INPUT); // Set the left button pin to input</br>
+               pinMode(buttonPinR, INPUT); // Set the right button pin to input</br>
+               Serial.begin(9600);</br>
+              }</br></br>
+
+              void loop() {</br>
+                Serial.println(digitalRead(buttonPinL));</br>
+                Serial.println(digitalRead(buttonPinR));</br></br>
+
+                if(digitalRead(buttonPinL) == 1) {</br>
+                  myServo.write(200);</br>
+                  delay(200);</br>
+                }</br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/0wELQY3AYUs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+    <hr class="m-0">
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5" id="opdracht13">
+          <div class="resume-content">
+            <h3 class="mb-0">Opdracht 13b</h3>
+            <div class="subheading mb-3">Assignments</div>
+            <p> Als laatste opdracht voegen we een Piezo speaker toe. Deze speaker kan verschillende tonen laten horen en daarmee kan je in code een melodie maken. In de code kan je de toonhoogte en toonduur bepalen. Samen met Martijn heb ik deze opdracht gemaakt, vandaar dat de video dus ook vanaf zijn YouTubekanaal komt. </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/1-V8ASm0F60" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+             <p> &copy; Martijn Griessler</p>
+          </div>
+        </div>
+
+    <hr class="m-0">
+
+      </div>
+
+    </section>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/resume.min.js"></script>
+
+</body>
+
+</html>
